@@ -1,9 +1,9 @@
 package main
 
 import (
-	"RSP/lib/memcache"
-	"RSP/lib/rsp"
 	"flag"
+	"github.com/vizshala/RSP/lib/memcache"
+	"github.com/vizshala/RSP/lib/rsp"
 	"log"
 	"time"
 )

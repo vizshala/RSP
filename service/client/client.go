@@ -1,8 +1,8 @@
 package main
 
 import (
-	"RSP/lib/rsp"
 	"flag"
+	"github.com/vizshala/RSP/lib/rsp"
 	"log"
 )
 

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"RSP/lib/memcache"
 	"encoding/json"
 	"flag"
 	"fmt"
+	"github.com/vizshala/RSP/lib/memcache"
 	"html/template"
 	"log"
 	"net/http"

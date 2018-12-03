@@ -1,8 +1,8 @@
 package rsp
 
 import (
-	"RSP/lib/tcp"
 	"fmt"
+	"github.com/vizshala/RSP/lib/tcp"
 	"log"
 	"strconv"
 	"strings"

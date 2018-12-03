@@ -1,10 +1,10 @@
 package rsp
 
 import (
-	"RSP/lib/tcp"
 	"bufio"
 	"errors"
 	"fmt"
+	"github.com/vizshala/RSP/lib/tcp"
 	"os"
 	"strings"
 )
