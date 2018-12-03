@@ -14,10 +14,10 @@ Architecture
 The grayed rectangle components are implemented in this project.
 The grayed database componet is not part of this project. Just to show the possiblity of plugin persistent storage.
 
-Also, the memory cache can be replaced with other in-memory database such redis and sync data with persistent database if necessary.
-It is also possible to add subsriber pattern message broker service such as kafka, RabbitMQ, and so on, to scale this architecture to build more robust communication among services.
+Also, the memory cache can be replaced with other in-memory database such [redis] and sync data with persistent database if necessary.
+It is also possible to add subsriber pattern message broker service such as [Kafka], [RabbitMQ], and so on, to scale this architecture to build more robust communication among services.
 
-Finally, there can be an global configuration and service discovery server such as ectd help to automate service start/stop gracefully.
+Finally, there can be an global configuration and service discovery server such as [etcd] help to automate service start/stop gracefully.
 
 RSP protocol
 ========
@@ -174,3 +174,7 @@ Where
 
 [c3]: https://c3js.org/ 
 [d3]: https://d3js.org/ 
+[Kafka]: https://kafka.apache.org/
+[etcd]: https://github.com/etcd-io/etcd
+[RabbitMQ]: https://www.rabbitmq.com/
+[redis]: https://redis.io/
