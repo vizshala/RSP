@@ -19,8 +19,18 @@ It is also possible to add subsriber pattern message broker service such as [Kaf
 
 Finally, there can be an global configuration and service discovery server such as [etcd] help to automate service start/stop gracefully.
 
+## Design Concept
+The idea behind this desing is to implement an flexible architecture that services are low-coupled. In this graph, rsp server, cache server and http server can be run independently. The depencendies are as following:
+
+http server pulls information from the cache server.
+rsp server pushs information to the cache server.
+http server and rsp server has no dependency on each other and even don't know each.
+
+This is the goal that I try to achieve: create a scalable system with lower coupling.
+By introducing an extra layer (in this case, the `cache server` act as the middleware), it is able to decouple the relation between rsp server and http server that would had been highly coupled if they were to communicate with each other.
+
 RSP protocol
-========
+============
 The protocol is simple
 
 ## client
