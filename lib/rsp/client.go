@@ -90,8 +90,7 @@ func (c *Client) Run() {
 				//	fmt.Println("timeout!")
 				// got data from remote connection
 				case data := <-chData:
-					response := strings.Split(data[:len(data)-1], " ")
-					fmt.Println(response)
+					fmt.Print(data)
 				}
 			}
 		// detect connection close during stdin blocking
