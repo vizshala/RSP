@@ -67,6 +67,10 @@ status_code|description|
 
 Build
 =============
+Build Environment: 
+go version go1.11.2 windows/amd64
+go version go1.11.2 linux/amd64
+
 Change directory to source code root, assuming located at $(GOPATH)/src/RSP. From shell, run the following commands:
 
 ```
