@@ -134,7 +134,7 @@ Each line is taken as a complete command plus its payload.
 
 Command|Payload  (optional)| Description |
 -------|-------------------|-------------|
-shorten|a URL              | invoke an external API for shortening long URL and returning a short URL |
+shorten|a URL              | invoke an external API for shortening long URL and returning a short URL. Take usage of bit.ly API|
 quit   |n/a                | exit applicatoin |
 
 #### Example
