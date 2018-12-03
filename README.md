@@ -22,12 +22,28 @@ Finally, there can be an global configuration and service discovery server such 
 ## Design Concept
 The idea behind this desing is to implement an flexible architecture that services are low-coupled. In this graph, rsp server, cache server and http server can be run independently. The depencendies are as following:
 
-http server pulls information from the cache server.
-rsp server pushs information to the cache server.
-http server and rsp server has no dependency on each other and even don't know each.
+* http server pulls information from the cache server.
+* rsp server pushs information to the cache server.
+* http server and rsp server has no dependency on each other and even don't know each.
 
-This is the goal that I try to achieve: create a scalable system with lower coupling.
+This is the goal that I try to achieve: create a scalable system with low coupling.
+
 By introducing an extra layer (in this case, the `cache server` act as the middleware), it is able to decouple the relation between rsp server and http server that would had been highly coupled if they were to communicate with each other.
+
+## Components
+
+### rsp server
+The server implement the RSP protocol.
+
+### cache server
+This is a rpc protocol based implementation simple in-memory cache. 
+
+### http server
+An simple http server that can be pluged in anytime. This server will try to find cache server and pull information from cache server.
+It servers an RESTful API by providing this URL http://127.0.0.1:8080/api/v1/state. 
+
+### rsp client
+The client implement the RSP protocol. Provide an simple shell for user to interact with rsp server.
 
 RSP protocol
 ============
