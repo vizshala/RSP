@@ -63,7 +63,7 @@ cache is memory cache server,
 
 httpserver is http server
 
-The above executable fils will be located at $(GOPATH)/src/RSP
+The above executable files will be located at $(GOPATH)/src/RSP
 
 Start Server
 =============
@@ -88,7 +88,7 @@ cache|string|cache server address (default "localhost:1234")|
 job|int|job queue capacity (default 100)|
 port|int|designate port to listen to (default 1314)|
 req_timeout|int|reqeust timeout (default 5)|
-rps|int| reqeust timeout (default 5) external api rate per second (default 30)|
+rps|int|external api rate per second (default 30)|
         
 ### start cache server
 ```
