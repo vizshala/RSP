@@ -196,6 +196,13 @@ Where
 
 `Exit now...` is the execution result telling me that the connection with server is closed and the application is going to exit.
 
+Userful tools 
+===============
+[mock api][mockapi]: A great tool to mock up RESTful API. Considering the scenario when frontend and backend developers need to conform to the same API spec define for their product and to avoid dependencies, API callers may utilize this kind of tool to mock the API before the backend is ready for testing. 
+
+Further Reading
+===============
+[AMQP][AMQP]
 
 3rd-party libraries
 ====================
@@ -208,3 +215,5 @@ Where
 [etcd]: https://github.com/etcd-io/etcd
 [RabbitMQ]: https://www.rabbitmq.com/
 [redis]: https://redis.io/
+[mockapi]: https://www.mockapi.io/
+[AMQP]: https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol
