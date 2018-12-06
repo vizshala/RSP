@@ -204,6 +204,10 @@ Further Reading
 ===============
 [AMQP][AMQP]
 
+Todo
+====
+* Integrate CI/CD to this project. Currently take usage of circleci for this purpose. Still have some problem with the procedure. The dashboard can be found at https://circleci.com/gh/vizshala/RSP. 
+
 3rd-party libraries
 ====================
 * [C3.js][c3]
