@@ -22,7 +22,9 @@ jobs:
       - checkout
 
       # specify any bash command here prefixed with `run: `
-      - run: make test
+      - run: 
           name: Run unit tests
+          command: |
+            make test
 
       - run: make
