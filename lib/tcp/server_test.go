@@ -50,7 +50,7 @@ func TestEchoServer(t *testing.T) {
 
 	conn, err := net.Dial("tcp", addr)
 	if err != nil {
-		t.Fatalf("could not connect to %s", addr)
+		t.Fatalf("could not connect to %s, %s", addr, err)
 	}
 
 	expect := "200 olleH\n"

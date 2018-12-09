@@ -17,7 +17,7 @@ func TestEchoClient(t *testing.T) {
 
 	client, err := NewClient(addr)
 	if err != nil {
-		t.Fatalf("failed to create new client")
+		t.Fatalf("failed to create new client, %s", err)
 	}
 
 	expect := "200 olleH\n"
