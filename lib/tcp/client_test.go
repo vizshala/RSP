@@ -3,6 +3,7 @@ package tcp
 import (
 	"fmt"
 	"testing"
+	"time"
 )
 
 func TestEchoClient(t *testing.T) {
@@ -15,9 +16,17 @@ func TestEchoClient(t *testing.T) {
 	handler := &EchoServer{}
 	go ListenAndServe(addr, handler, 5)
 
+	// allow retrying because server may be not ready yet!
+	retry := 5
 	client, err := NewClient(addr)
+	for err != nil && retry > 0 {
+		fmt.Printf("%s", err)
+		time.Sleep(time.Second)
+		retry--
+		client, err = NewClient(addr)
+	}
 	if err != nil {
-		t.Fatalf("failed to create new client, %s", err)
+		t.Fatalf("failed to connect to server")
 	}
 
 	expect := "200 olleH\n"

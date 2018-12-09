@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"testing"
+	"time"
 )
 
 // reserver string helper
@@ -48,9 +49,17 @@ func TestEchoServer(t *testing.T) {
 	handler := &EchoServer{}
 	go ListenAndServe(addr, handler, 5)
 
+	// allow retrying because the server may be not ready yet!
+	retry := 5
 	conn, err := net.Dial("tcp", addr)
+	for err != nil && retry > 0 {
+		fmt.Printf("%s", err)
+		time.Sleep(time.Second)
+		retry--
+		conn, err = net.Dial("tcp", addr)
+	}
 	if err != nil {
-		t.Fatalf("could not connect to %s, %s", addr, err)
+		t.Fatalf("failed to connect to server")
 	}
 
 	expect := "200 olleH\n"
