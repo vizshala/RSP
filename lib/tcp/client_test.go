@@ -11,7 +11,7 @@ func TestEchoClient(t *testing.T) {
 		t.Fatal("could not get random port")
 	}
 
-	addr := fmt.Sprintf(":%d", port)
+	addr := fmt.Sprintf("127.0.0.1:%d", port)
 	handler := &EchoServer{}
 	go ListenAndServe(addr, handler, 5)
 
