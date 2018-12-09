@@ -63,7 +63,7 @@ func getAddr(conn net.Conn) string {
 	return conn.RemoteAddr().String()
 }
 
-// get a random port that is not currently used
+// GetRandomPort gets a random port that is not currently used
 func GetRandomPort() (int, error) {
 	// bind port 0 will cause a random port to be picked by system
 	listener, err := net.Listen("tcp", ":0")

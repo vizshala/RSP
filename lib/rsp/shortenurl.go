@@ -24,12 +24,12 @@ type bitlyShortenALinkRes struct {
 	// ignore other fileds
 }
 
-// CreateShortUrl takes usage of bit.ly shortening URL service
-func CreateShortURL(originalUrl string) (string, int) {
+// CreateShortURL takes usage of bit.ly shortening URL service
+func CreateShortURL(originalURL string) (string, int) {
 	shortenLinkReq := &bitlyShortenALinkReq{
 		GroupGUID: "",
 		Domain:    "bit.ly",
-		LongURL:   originalUrl,
+		LongURL:   originalURL,
 	}
 	reqStr, _ := json.Marshal(shortenLinkReq)
 
