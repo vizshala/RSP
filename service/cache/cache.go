@@ -19,4 +19,5 @@ func main() {
 	// start cache server
 	log.Println("start cache server")
 	memcache.LaunchServer(serverAddr)
+	log.Println("end cache server")
 }
