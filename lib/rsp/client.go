@@ -9,12 +9,10 @@ import (
 	"strings"
 )
 
-// Client is a warpper of tcp.Client
 type Client struct {
 	tcp *tcp.Client
 }
 
-// NewClient create a new rsp client
 func NewClient(serverAddr string) (*Client, error) {
 
 	tcpClient, err := tcp.NewClient(serverAddr)

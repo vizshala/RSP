@@ -17,6 +17,7 @@ func main() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 
 	// start cache server
-	log.Println("start cache server")
+	log.Printf("start cache server: %s\n", serverAddr)
 	memcache.LaunchServer(serverAddr)
+	log.Println("end cache server")
 }
