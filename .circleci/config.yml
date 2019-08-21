@@ -29,7 +29,7 @@ jobs:
       - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
       #- run: golint ./... 2>&1 | ./bin/reviewdog -f=golint -reporter=github-pr-check
       #- run: go vet ./... 2>&1 | ./bin/reviewdog -f=govet -reporter=github-pr-check
-      - run: ./bin/reviewdog -ci="circle-ci" -conf=./.reviewdog.yml
+      - run: ./bin/reviewdog -conf=./.reviewdog.yml -reporter="github-pr-check"
       
       # specify any bash command here prefixed with `run: `
       - run: 
