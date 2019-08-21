@@ -17,3 +17,6 @@ func TestB() {
 
 	panic("not good")
 }
+
+func TestC() {
+}
