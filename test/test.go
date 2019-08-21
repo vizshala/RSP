@@ -9,3 +9,11 @@ func TestA() {
 		}()
 	}
 }
+
+func TestB() {
+	defer func() {
+		fmt.Println("recovered:", recover())
+	}()
+
+	panic("not good")
+}

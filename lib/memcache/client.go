@@ -13,6 +13,7 @@ type CacheClient struct {
 
 // NewClient creats new cache client. If error occurred, CacheClient will be nil
 func NewClient(retryWait int) *CacheClient {
+	var s string
 	return &CacheClient{
 		retryWait: retryWait,
 	}
