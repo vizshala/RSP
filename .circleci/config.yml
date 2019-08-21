@@ -20,6 +20,11 @@ jobs:
     working_directory: /go/src/github.com/vizshala/RSP
     steps:
       - checkout
+      - run:
+        name: "Setup custom environment variables"
+          command: |
+            echo 'export CI_COMIT="$(git rev-parse HEAD)"' >> $BASH_ENV 
+            source $BASE_ENV
 
       - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
       - run: go vet ./... 2>&1 | ./bin/reviewdog -f=govet -reporter=github-pr-check
