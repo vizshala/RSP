@@ -25,10 +25,11 @@ jobs:
           command: |
             echo 'export CI_COMIT="$(git rev-parse HEAD)"' >> $BASH_ENV 
             source $BASH_ENV
-
+      - run: go get -u github.com/kisielk/errcheck
       - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b ./bin
-      - run: golint ./... 2>&1 | ./bin/reviewdog -f=golint -reporter=github-pr-check
-      - run: go vet ./... 2>&1 | ./bin/reviewdog -f=govet -reporter=github-pr-check
+      #- run: golint ./... 2>&1 | ./bin/reviewdog -f=golint -reporter=github-pr-check
+      #- run: go vet ./... 2>&1 | ./bin/reviewdog -f=govet -reporter=github-pr-check
+      - run: ./bin/reviewdog -ci="circle-ci" -conf=./.reviewdog.yml
       
       # specify any bash command here prefixed with `run: `
       - run: 
