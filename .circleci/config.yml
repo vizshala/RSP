@@ -21,7 +21,7 @@ jobs:
     steps:
       - checkout
       - run:
-        name: "Setup custom environment variables"
+          name: "Setup custom environment variables"
           command: |
             echo 'export CI_COMIT="$(git rev-parse HEAD)"' >> $BASH_ENV 
             source $BASE_ENV
